@@ -1,0 +1,8 @@
+[
+  {
+	"repository": "CyanogenMod/android_device_samsung_i777",
+	"target_path": "device/samsung/i777"
+	"branch": "jellybean"
+  }
+]
+
