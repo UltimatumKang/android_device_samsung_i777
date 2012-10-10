@@ -43,9 +43,11 @@ PRODUCT_COPY_FILES += \
 	device/samsung/i777/prebuilt/kernel/i777/zImage:kernel \
         device/samsung/i777/recovery.fstab:ramdisk.img \
         device/samsung/i777/recovery.fstab:recovery/root/etc/recovery.fstab \
-	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/scsi_wait.ko:system/lib/modules/scsi_wait.ko \
+	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
 	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/driver.ko:system/lib/modules/driver.ko
+	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
+	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/Si4709_driver.ko:system/lib/modules/Si4709_driver.ko \
+	device/samsung/i777/prebuilt/kernel/i777/system/lib/modules/j4fs.ko:system/lib/modules/j4fs.ko
 
 #copy 00check
 PRODUCT_COPY_FILES += \
