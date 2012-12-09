@@ -24,6 +24,7 @@ TARGET_BOARD_INFO_FILE := device/samsung/i777/board-info.txt
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4210
 TARGET_KERNEL_CONFIG := cyanogenmod_i777_defconfig
+TARGET_ARCH := arm
 
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/i777/overlay/include
 
