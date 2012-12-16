@@ -2,18 +2,27 @@
     {
         "repository": "SlimRoms/device_samsung_galaxys2-common",
         "target_path": "device/samsung/galaxys2-common",
-	"branch": "jb"
+        "branch": "jb4.2"
     },
     {
-	"repository": "CyanogenMod/android_kernel_samsung_smdk4210",
-	"target_path": "kernel/samsung/smdk4210",
-	"branch": "jellybean"
+        "repository": "CyanogenMod/android_kernel_samsung_smdk4210",
+        "target_path": "kernel/samsung/smdk4210",
+        "branch": "cm-10.1"
     },
     {
-        "repository": "SlimRoms/proprietary_vendor_samsung",
+        "repository": "SlimRoms/hardware_samsung",
+        "target_path": "hardware/samsung",
+        "branch": "jb4.2"
+    },
+    {
+        "repository": "CyanogenMod/android_packages_apps_SamsungServiceMode",
+        "target_path": "packages/apps/SamsungServiceMode",
+        "branch": "cm-10.1"
+    },
+    {
+        "repository": "TheMuppets/proprietary_vendor_samsung",
         "target_path": "vendor/samsung",
-	"branch": "jb"
+        "branch": "cm-10.1"
     }
-
 ]
 
