@@ -60,12 +60,12 @@ done
 # limitations under the License.
 
 PRODUCT_PACKAGES += \\
-	libTVOut \\
-	libfimc \\
-	libhdmi \\
-	libhdmiclient \\
-    libmediayamahaservice \\
-	libsecion
+    libTVOut \\
+    libUMP \\
+    libfimc \\
+    libhdmi \\
+    libhdmiclient \\
+    libsecion
 
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__COMMON__/proprietary/system/lib/hw/camera.exynos4.so:system/lib/hw/vendor-camera.exynos4.so \\
@@ -104,6 +104,16 @@ include \$(CLEAR_VARS)
 LOCAL_MODULE := libTVOut
 LOCAL_MODULE_OWNER := samsung
 LOCAL_SRC_FILES := system/lib/libTVOut.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libUMP
+LOCAL_MODULE_OWNER := samsung
+LOCAL_SRC_FILES := system/lib/libUMP.so
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -150,16 +160,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
 include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libmediayamahaservice
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libmediayamahaservice.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
-
 endif
 
 EOF
@@ -180,7 +180,7 @@ EOF
 # limitations under the License.
 
 # Prebuilt libraries that are needed to build open-source libraries
-PRODUCT_COPY_FILES += \\
+PRODUCT_COPY_FILES := \\
     vendor/__VENDOR__/__DEVICE__/proprietary/system/lib/libril.so:obj/lib/libril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/system/lib/libsecril-client.so:obj/lib/libsecril-client.so
 
