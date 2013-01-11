@@ -20,9 +20,14 @@
         "branch": "cm-10.1"
     },
     {
-        "repository": "TheMuppets/proprietary_vendor_samsung",
+        "repository": "mnm9994u/prebuilt",
+        "target_path": "prebuilt",
+        "branch": "master"
+    },
+    {
+        "repository": "SlimRoms/proprietary_vendor_samsung",
         "target_path": "vendor/samsung",
-        "branch": "cm-10.1"
+        "branch": "jb4.2"
     }
 ]
 
