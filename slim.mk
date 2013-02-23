@@ -24,7 +24,7 @@ PRODUCT_RELEASE_NAME := SGH-I777
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-# Inherit some common CM stuff.
+# Inherit some common Slim stuff.
 $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -36,11 +36,11 @@ $(call inherit-product, vendor/slim/config/common_sgs.mk)
 # Inherit torch settings
 $(call inherit-product, vendor/slim/config/common_ledflash.mk)
 
-#Boot Animation
+# Boot Animation
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
 
-#copy 00check
+# copy 00check
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
 
