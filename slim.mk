@@ -18,7 +18,7 @@
 $(call inherit-product, vendor/slim/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := SGH-I777
+PRODUCT_RELEASE_NAME := i777
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 800
