@@ -87,4 +87,4 @@ PRODUCT_COPY_FILES += \
 	$(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
 $(call inherit-product-if-exists, vendor/samsung/i777/i777-vendor.mk)
-$(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
+#$(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
