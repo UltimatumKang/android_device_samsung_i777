@@ -1,25 +1,52 @@
-# Inherit AOSP device configuration for galaxys2.
-$(call inherit-product, device/samsung/i777/full_i777.mk)
+#
+# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2013 The Xylon Experimental
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-# Inherit common product files.
-$(call inherit-product, vendor/ukg/config/common.mk)
+# name
+PRODUCT_RELEASE_NAME := ATTGS3
 
-# Inherit GSM common stuff
-$(call inherit-product, vendor/ukg/config/gsm.mk)
+# device
+$(call inherit-product-if-exists, device/samsung/d2att/full_d2att.mk)
 
-# Setup device specific product configuration.
-PRODUCT_DEVICE := i777
-PRODUCT_NAME := ukg_i777
+# gsm
+$(call inherit-product, vendor/ukg/config/common_gsm.mk)
+
+# languages
+PRODUCT_LOCALES := en_US de_DE zh_CN zh_TW cs_CZ nl_BE nl_NL en_AU en_GB en_CA en_NZ en_SG fr_BE fr_CA fr_FR fr_CH de_AT de_LI de_CH it_IT it_CH ja_JP ko_KR pl_PL ru_RU es_ES ar_EG ar_IL bg_BG ca_ES hr_HR da_DK en_IN en_IE en_ZA fi_FI el_GR iw_IL hi_IN hu_HU in_ID lv_LV lt_LT nb_NO pt_BR pt_PT ro_RO sr_RS sk_SK sl_SI es_US sv_SE tl_PH th_TH tr_TR uk_UA vi_VN
+
+# phone
+$(call inherit-product, vendor/ukg/config/common_phone.mk)
+
+# products
+PRODUCT_DEVICE := d2att
 PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := SGH-I777
+PRODUCT_NAME := ukg_d2att
+PRODUCT_MODEL := Samsung Galaxy S 3
+PRODUCT_MANUFACTURER := Samsung
+PRODUCT_PROPERTY_OVERRIDES += ro.buildzipid=ukg.d2att.$(shell date +%m%d%y).$(shell date +%H%M%S)
 
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-I777 TARGET_DEVICE=SGH-I777 BUILD_FINGERPRINT=samsung/SGH-I777/SGH-I777:4.0.3/IML74K/XXLPQ:user/release-keys PRIVATE_BUILD_DESC="SGH-I777-user 4.0.3 IML74K XXLPQ release-keys"
+# overrides
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_NUMBER=573038 \
+    PRODUCT_NAME=d2att \
+    TARGET_BUILD_TYPE=user \
+    BUILD_VERSION_TAGS=release-keys \
+    PRIVATE_BUILD_DESC="d2att-user 4.2.2 JDQ39 573038 release-keys" \
+    BUILD_FINGERPRINT="samsung/d2att:4.2.2/JDQ39/573038:user/release-keys"
 
-# Copy i9100 specific prebuilt files
-PRODUCT_PACKAGES += \
-    Thinkfree
-
-PRODUCT_COPY_FILES += \
-   vendor/ukg/prebuilt/hybrid_hdpi.conf:system/etc/beerbong/properties.conf \
-   vendor/ukg/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+# hybrid
+PRODUCT_COPY_FILES +=  \
+    vendor/ukg/prebuilt/hybrid_xhdpi_no_nav.conf:system/etc/beerbong/properties.conf
